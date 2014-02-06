@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full Width
+Template Name: Paper Full
 */
 get_header(); ?>
 
@@ -18,7 +18,7 @@ get_header(); ?>
 	<?php /* Start loop */ ?>
 	<ul class="large-block-grid-6 medium-block-grid-4 small-block-grid-2">
 		<?php while (have_posts()) : the_post(); ?>
-			get_template_part( 'loop', 'paper' );
+			get_template_part( 'loop', 'paper	' );
 		<?php endwhile; // End the loop ?>
 	</ul>
 
