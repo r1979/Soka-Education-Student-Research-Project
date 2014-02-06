@@ -4,6 +4,15 @@ Template Name: Full Width
 */
 get_header(); ?>
 
+	<?php 
+		$args = array(	
+			'post_type'=> 'paper',
+			'order'   => 'ASC'
+		);
+		
+		$the_query = new WP_Query( $args );
+	?>
+
 	<div class="small-12 large-12 columns" role="main">
 	
 	<?php /* Start loop */ ?>
@@ -15,11 +24,6 @@ get_header(); ?>
 			<div class="entry-content">
 				<?php the_content(); ?>
 			</div>
-			<footer>
-				<?php wp_link_pages(array('before' => '<nav id="page-nav"><p>' . __('Pages:', 'FoundationPress'), 'after' => '</p></nav>' )); ?>
-				<p><?php the_tags(); ?></p>
-			</footer>
-			<?php comments_template(); ?>
 		</article>
 	<?php endwhile; // End the loop ?>
 
