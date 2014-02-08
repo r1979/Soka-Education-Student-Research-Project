@@ -10,6 +10,9 @@
 <?php $issue = wp_get_post_terms( $post->ID, 'published_issue');  ?>
 <?php $postmeta = get_post_custom($post->ID); ?>
 
+<?php 
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ($post == null){ ?>
 		<h5>Nothing to show.</h5>
