@@ -11,6 +11,9 @@
 <?php $postmeta = get_post_custom($post->ID); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ($post == null){ ?>
+
+	<?php } elseif (get_post_type($post->ID)=='paper'){ ?>
 	<header>
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 	</header>
@@ -31,6 +34,9 @@
 		</span>
 		</p>
 	</footer>
+<?php } else { ?>
+	Nothing to show.
+<?php } ?>
 </article>
 
 
