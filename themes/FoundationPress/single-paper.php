@@ -11,15 +11,17 @@
 			<div class="entry-content">
 				<?php the_field( "paper_abstract" ); ?>
 				<span class="authors">
-					<?php the_field( "authors" ); ?>
+					<?php the_field( "author" ); ?>
 				</span>
 			</div>
+			<div>
 				<span class="pub_issue">
 					<?php the_field( "published_issue" ); ?>,
 				</span>
 				<span class="pub_pages">
 					<?php the_field( "published_pages" ); ?>
 				</span>
+			</div>
 		</article>
 	<?php endwhile;?>
 
