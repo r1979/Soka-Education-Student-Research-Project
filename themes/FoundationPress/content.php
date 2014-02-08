@@ -31,7 +31,6 @@
 		</span>
 		</p>
 	</footer>
-	<hr />
 </article>
 
 
