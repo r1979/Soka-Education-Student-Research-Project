@@ -7,6 +7,7 @@
 <h1>Vote for published articles.</h1>
 <h2>Search by authors, titles, or conference year.</h2>
 <?php get_search_form(); ?>
+<h4>Note: All articles re-order upon page reload.</h4>
 </div>
 </div>
 	</div>
