@@ -27,7 +27,7 @@ if(!function_exists('wpv_voting_dbinstall')){
     function wpv_voting_dbinstall() {
         global $wpdb, $wpv_voting_db_version;
         $charset_collate = '';
-        
+
 	if($wpdb->supports_collation()) {
 		if(!empty($wpdb->charset)) {
 			$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
@@ -43,7 +43,7 @@ if(!function_exists('wpv_voting_dbinstall')){
               author_id bigint(20) unsigned NOT NULL,
               vote_count bigint(20) NULL,
               PRIMARY KEY  (ID)
-            ); 
+            );
               CREATE TABLE ".$wpdb->prefix."wpv_voting_meta (
               post_id bigint(20) unsigned NOT NULL,
               voter_id bigint(20) unsigned NOT NULL,
@@ -53,11 +53,11 @@ if(!function_exists('wpv_voting_dbinstall')){
             ) $charset_collate;";
         require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($query);
-        
+
         ### Create options
         add_option("wpv-voting-db-version", $wpv_voting_db_version);
         add_option('wpv-top-voted-scount', '5');
-        
+
         ### upgrade for WP version below 3.1
         $installed_ver = get_option("wpv-voting-db-version");
         if($installed_ver != $wpv_voting_db_version){
@@ -67,7 +67,7 @@ if(!function_exists('wpv_voting_dbinstall')){
                   author_id bigint(20) unsigned NOT NULL,
                   vote_count bigint(20) NULL,
                   PRIMARY KEY  (ID)
-                ); 
+                );
                   CREATE TABLE ".$wpdb->prefix."wpv_voting_meta (
                   post_id bigint(20) unsigned NOT NULL,
                   voter_id bigint(20) unsigned NOT NULL,
@@ -127,7 +127,7 @@ if(!function_exists('wpv_voting_top_voted_shortcode')) {
             'show' => '5',
             'nopostmsg' => 'Nothing to show'
         ), $atts ) );
-        
+
         return wpv_top_voted_calc($show, $nopostmsg);
     }
 }
@@ -192,7 +192,7 @@ if(!function_exists('wpv_voting_footer')){
     </div>
     <?php
     }
-    
+
     ### Load only public vote is not allowed
     $allow_public_vote = get_option('wpv-allow-public-vote');
     if(empty($allow_public_vote) || $allow_public_vote == null || $allow_public_vote == 'No'){
@@ -308,7 +308,7 @@ if(!function_exists('wpv_voting_get_display_vote')){
 
         ### Get current vote count
         $curr_votes = wpv_voting_get_vote($postID, $author_ID);
-        
+
         ### Allow or disallow post author to vote his own posts
         $allow_author_vote = get_option('wpv-allow-author-vote');
         if(empty ($allow_author_vote) || $allow_author_vote == null || $allow_author_vote == 'No'){
@@ -317,7 +317,7 @@ if(!function_exists('wpv_voting_get_display_vote')){
         else {
             $allow_author_vote = true;
         }
-        
+
         ### Allow or disallow public vote check
         $allow_public_vote = get_option('wpv-allow-public-vote');
         if(empty($allow_public_vote) || $allow_public_vote == null || $allow_public_vote == 'No'){
@@ -326,12 +326,12 @@ if(!function_exists('wpv_voting_get_display_vote')){
         else {
             $allow_public_vote = true;
         }
-        
+
         ### Get custom vote count text
         $voted_custom_txt = get_option('wpv-voted-custom-txt');
         if(empty($voted_custom_txt))
             $voted_custom_txt = 'voted';
-        
+
         ### Get custom vote button text
         $vote_btn_custom_txt = get_option('wpv-vote-btn-custom-txt');
         if(empty($vote_btn_custom_txt))
@@ -342,14 +342,14 @@ if(!function_exists('wpv_voting_get_display_vote')){
 
             ### Registered user
             if (is_user_logged_in() || $allow_public_vote) {
-                
+
                 ### Unlogged in
                 if(!is_user_logged_in() && $allow_public_vote)
                     $user_ID = 0;
-                
+
                 ### Cannot vote their own post (Voting is disallowed) and show vote count and voted btn
                 if($user_ID == $author_ID && !$allow_author_vote){
-                    
+
                     $output .= '<div class="wpv_postvote">'.
                         '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
                             '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
@@ -359,18 +359,18 @@ if(!function_exists('wpv_voting_get_display_vote')){
                             '<span class="wpv_votebtncon">'.
                                 '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                     '<span class="wpv_voted_icon"></span>'.
-                                    '<span class="wpv_votebtn_txt wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
+                                    '<span class="wpv_votebtn_txt button success round wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
                                 '</span>'.
                             '</span>'.
                         '</span>'.
-                    '</div>';                   
+                    '</div>';
                 }
                 ### Voting is allowed
                 else {
 
                     ### New vote, so allowed and show vote count and vote btn
                     if(!wpv_voting_user_voted($postID, $user_ID, $author_ID, $user_IP)) {
-                        
+
                         $output .= '<div class="wpv_postvote">'.
                             '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
                                 '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
@@ -383,21 +383,21 @@ if(!function_exists('wpv_voting_get_display_vote')){
                                     '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                         '<a title="vote" class="wpv_voting" href="javascript:void(0)" >'.
                                             '<span class="wpv_vote_icon"></span>'.
-                                            '<span class="wpv_votebtn_txt">'.$vote_btn_custom_txt.'</span>'.
+                                            '<span class="wpv_votebtn_txt button success round">'.$vote_btn_custom_txt.'</span>'.
                                             '<input type="hidden" class="postID" value="'.$postID.'" />'.
                                             '<input type="hidden" class="userID" value="'.$user_ID.'" />'.
                                             '<input type="hidden" class="authorID" value="'.$author_ID.'" />'.
                                         '</a>'.
                                         '<span class="wpv_voted_icon" style="display: none;"></span>'.
-                                        '<span class="wpv_votebtn_txt wpv_votedbtn_txt" style="display: none;">'.$vote_btn_custom_txt.'</span>'.
+                                        '<span class="wpv_votebtn_txt button success round wpv_votedbtn_txt" style="display: none;">'.$vote_btn_custom_txt.'</span>'.
                                     '</span>'.
                                 '</span>'.
                             '</span>'.
-                        '</div>';                       
+                        '</div>';
                     }
                     ### Already voted, so disallowed and show vote count and voted btn
                     else {
-                        
+
                         $output .= '<div class="wpv_postvote">'.
                             '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
                                 '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
@@ -407,17 +407,17 @@ if(!function_exists('wpv_voting_get_display_vote')){
                                 '<span class="wpv_votebtncon">'.
                                     '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                         '<span class="wpv_voted_icon"></span>'.
-                                        '<span class="wpv_votebtn_txt wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
+                                        '<span class="wpv_votebtn_txt button success round wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
                                     '</span>'.
                                 '</span>'.
                             '</span>'.
-                        '</div>';                        
+                        '</div>';
                     }
                 }
             }
             ### Public vote is not allowed
             else {
-                
+
                 $output .= '<div class="wpv_postvote">'.
                     '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
                         '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
@@ -427,17 +427,17 @@ if(!function_exists('wpv_voting_get_display_vote')){
                             '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                 '<a title="vote" href="javascript:wpv_regopen();">'.
                                     '<span class="wpv_vote_icon"></span>'.
-                                    '<span class="wpv_votebtn_txt">'.$vote_btn_custom_txt.'</span>'.
+                                    '<span class="wpv_votebtn_txt button success round">'.$vote_btn_custom_txt.'</span>'.
                                 '</a>'.
                             '</span>'.
                         '</span>'.
                     '</span>'.
-                '</div>';               
+                '</div>';
             }
         }
         ### Voting feature is off, so show only vote count
         else {
-            
+
             $output .= '<div class="wpv_postvote">'.
                 '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
                     '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
@@ -445,9 +445,9 @@ if(!function_exists('wpv_voting_get_display_vote')){
                         $voted_custom_txt.
                     '</span>'.
                 '</span>'.
-            '</div>';            
+            '</div>';
         }
-        
+
         return $output;
     }
 }
