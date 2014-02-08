@@ -352,15 +352,15 @@ if(!function_exists('wpv_voting_get_display_vote')){
 
                     $output .= '<div class="wpv_postvote">'.
                         '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
-                            '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
-                                '<span class="wpv_vcount">'.$curr_votes.' </span>'.
-                                $voted_custom_txt.
-                            '</span>'.
                             '<span class="wpv_votebtncon">'.
                                 '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                     '<span class="wpv_voted_icon"></span>'.
                                     '<span class="wpv_votebtn_txt button success radius wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
                                 '</span>'.
+                            '</span>'.
+                            '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
+                                '<span class="wpv_vcount">'.$curr_votes.' </span>'.
+                                $voted_custom_txt.
                             '</span>'.
                         '</span>'.
                     '</div>';
@@ -373,12 +373,6 @@ if(!function_exists('wpv_voting_get_display_vote')){
 
                         $output .= '<div class="wpv_postvote">'.
                             '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
-                                '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
-                                    '<img title="Loading" alt="Loading" src="'.get_bloginfo('url').'/wp-content/plugins/wp-voting/images/ajax-loader.gif" class="loadingimage" style="visibility: hidden; display: none;"/>'.
-                                    '<span class="wpv_vcount">'.$curr_votes.' </span>'.
-                                    $voted_custom_txt.
-                                '</span>'.
-
                                 '<span class="wpv_votebtncon">'.
                                     '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                         '<a title="vote" class="wpv_voting" href="javascript:void(0)" >'.
@@ -391,6 +385,12 @@ if(!function_exists('wpv_voting_get_display_vote')){
                                         '<span class="wpv_votebtn_txt button success radius wpv_votedbtn_txt" style="display: none;">'.$vote_btn_custom_txt.'</span>'.
                                     '</span>'.
                                 '</span>'.
+                                '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
+                                    '<img title="Loading" alt="Loading" src="'.get_bloginfo('url').'/wp-content/plugins/wp-voting/images/ajax-loader.gif" class="loadingimage" style="visibility: hidden; display: none;"/>'.
+                                    '<span class="wpv_vcount">'.$curr_votes.' </span>'.
+                                    $voted_custom_txt.
+                                '</span>'.
+
                             '</span>'.
                         '</div>';
                     }
@@ -399,15 +399,15 @@ if(!function_exists('wpv_voting_get_display_vote')){
 
                         $output .= '<div class="wpv_postvote">'.
                             '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
-                                '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
-                                    '<span class="wpv_vcount">'.$curr_votes.' </span>'.
-                                    $voted_custom_txt.
-                                '</span>'.
                                 '<span class="wpv_votebtncon">'.
                                     '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                         '<span class="wpv_voted_icon"></span>'.
                                         '<span class="wpv_votebtn_txt button success radius wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
                                     '</span>'.
+                                '</span>'.
+                                '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
+                                    '<span class="wpv_vcount">'.$curr_votes.' </span>'.
+                                    $voted_custom_txt.
                                 '</span>'.
                             '</span>'.
                         '</div>';
@@ -419,15 +419,15 @@ if(!function_exists('wpv_voting_get_display_vote')){
 
                 $output .= '<div class="wpv_postvote">'.
                     '<span class="wpv_votewidget" id="wpvvotewidget'.get_the_ID().'">'.
-                        '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
-                            '<span class="wpv_vcount">'.$curr_votes.' </span>'.$voted_custom_txt.
-                        '</span>'.
                         '<span class="wpv_votebtncon">'.
                             '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                 '<a title="vote" href="javascript:wpv_regopen();">'.
                                     '<span class="wpv_votebtn_txt button success radius">'.$vote_btn_custom_txt.'</span>'.
                                 '</a>'.
                             '</span>'.
+                        '</span>'.
+                        '<span class="wpv_votecount" id="wpvvotecount'.get_the_ID().'">'.
+                            '<span class="wpv_vcount">'.$curr_votes.' </span>'.$voted_custom_txt.
                         '</span>'.
                     '</span>'.
                 '</div>';
