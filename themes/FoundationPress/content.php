@@ -15,7 +15,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ($post == null){ ?>
-
+		<h5>Nothing to show.</h5>
 	<?php } elseif (get_post_type($post->ID)=='paper'){ ?>
 	<header>
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
