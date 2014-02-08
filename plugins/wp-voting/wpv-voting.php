@@ -359,7 +359,7 @@ if(!function_exists('wpv_voting_get_display_vote')){
                             '<span class="wpv_votebtncon">'.
                                 '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                     '<span class="wpv_voted_icon"></span>'.
-                                    '<span class="wpv_votebtn_txt button success round wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
+                                    '<span class="wpv_votebtn_txt button success radius wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
                                 '</span>'.
                             '</span>'.
                         '</span>'.
@@ -382,14 +382,13 @@ if(!function_exists('wpv_voting_get_display_vote')){
                                 '<span class="wpv_votebtncon">'.
                                     '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                         '<a title="vote" class="wpv_voting" href="javascript:void(0)" >'.
-                                            '<span class="wpv_vote_icon"></span>'.
-                                            '<span class="wpv_votebtn_txt button success round">'.$vote_btn_custom_txt.'</span>'.
+                                            '<span class="wpv_votebtn_txt button success radius">'.$vote_btn_custom_txt.'</span>'.
                                             '<input type="hidden" class="postID" value="'.$postID.'" />'.
                                             '<input type="hidden" class="userID" value="'.$user_ID.'" />'.
                                             '<input type="hidden" class="authorID" value="'.$author_ID.'" />'.
                                         '</a>'.
                                         '<span class="wpv_voted_icon" style="display: none;"></span>'.
-                                        '<span class="wpv_votebtn_txt button success round wpv_votedbtn_txt" style="display: none;">'.$vote_btn_custom_txt.'</span>'.
+                                        '<span class="wpv_votebtn_txt button success radius wpv_votedbtn_txt" style="display: none;">'.$vote_btn_custom_txt.'</span>'.
                                     '</span>'.
                                 '</span>'.
                             '</span>'.
@@ -407,7 +406,7 @@ if(!function_exists('wpv_voting_get_display_vote')){
                                 '<span class="wpv_votebtncon">'.
                                     '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                         '<span class="wpv_voted_icon"></span>'.
-                                        '<span class="wpv_votebtn_txt button success round wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
+                                        '<span class="wpv_votebtn_txt button success radius wpv_votedbtn_txt">'.$vote_btn_custom_txt.'</span>'.
                                     '</span>'.
                                 '</span>'.
                             '</span>'.
@@ -426,8 +425,7 @@ if(!function_exists('wpv_voting_get_display_vote')){
                         '<span class="wpv_votebtncon">'.
                             '<span class="wpv_votebtn" id="wpvvoteid'.get_the_ID().'">'.
                                 '<a title="vote" href="javascript:wpv_regopen();">'.
-                                    '<span class="wpv_vote_icon"></span>'.
-                                    '<span class="wpv_votebtn_txt button success round">'.$vote_btn_custom_txt.'</span>'.
+                                    '<span class="wpv_votebtn_txt button success radius">'.$vote_btn_custom_txt.'</span>'.
                                 '</a>'.
                             '</span>'.
                         '</span>'.
