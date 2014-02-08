@@ -10,6 +10,9 @@
 <?php $issue = wp_get_post_terms( $post->ID, 'published_issue');  ?>
 <?php $postmeta = get_post_custom($post->ID); ?>
 
+<?php 
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header>
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
