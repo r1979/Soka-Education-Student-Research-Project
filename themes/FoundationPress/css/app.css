@@ -20,8 +20,8 @@ font-size: 20px !important;
 padding: 5px 0px;
 }
 .wpv_votecount{
-	padding: 5px;
-float: left
+padding: 10px 0px;
+display: inline-block;
 }
 .wpv_voted_icon{
 display: none;
