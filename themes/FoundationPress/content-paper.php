@@ -12,15 +12,15 @@
 <?php $issue = wp_get_post_terms( $post->ID, 'published_issue');  ?>
 <?php $postmeta = get_post_custom($post->ID)?>
 	<header>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 	</header>
 <p><strong>
 <?php print($authors[0]->name); ?>
 </strong>
 <br/>
 <span>
-<a href="<?php echo bloginfo('url');?>/published_issue/<?php print($issue[0]->name); ?>"><?php print($issue[0]->name); ?></a>, 
-<?php echo $postmeta['published_pages'][0];  ?>
+<a href="<?php echo bloginfo('url');?>/published_issue/<?php print($issue[0]->name); ?>">Published <?php print($issue[0]->name); ?></a>, 
+pg. <?php echo $postmeta['published_pages'][0];  ?>
 </span>
 </p>
 

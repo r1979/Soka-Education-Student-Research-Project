@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 
 <!-- Row for main content area -->
-	<div class="row">
+	<div class="row head-top">
 		<div class="column">
 <div class="column">		
+<h1>Vote for published articles.</h1>
+<h2>Search by authors, titles, or conference year.</h2>
 <?php get_search_form(); ?>
 </div>		
 </div>
 	</div>
 
 	<div class="small-12 large-12 columns" role="main">
-
 	<?php if ( have_posts() ) : ?>
 		<ul class="large-block-grid-3 medium-block-grid-2 small-block-grid-1">
 		<?php /* Start the Loop */ ?>
@@ -24,5 +25,4 @@
 		</div>
 	<?php endif; // end have_posts() check ?>
 	</div>
-
 <?php get_footer(); ?>
