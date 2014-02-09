@@ -9,15 +9,21 @@
 	</div>
 </div>
 <!-- Row for main content area -->
-	<div class="small-12 large-8 columns" role="main">
+	<div class="small-12 large-12 columns" role="main">
+
+
+
 
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
+		<ul class="large-block-grid-3 medium-block-grid-2 small-block-grid-1">
 		<?php while ( have_posts() ) : the_post(); ?>
+			<li>
 			<?php get_template_part( 'content', get_post_format() ); ?>
+			</li>
 		<?php endwhile; ?>
-
+		</ul>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
@@ -32,6 +38,5 @@
 	<?php } ?>
 
 	</div>
-	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
