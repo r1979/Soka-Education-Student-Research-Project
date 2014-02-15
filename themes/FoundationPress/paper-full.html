@@ -16,8 +16,8 @@
           <tr>
             <th>Title</th>
             <th>Author</th>
-            <th>Published</th>
-            <th>Pages</th>
+            <th>Issue</th>
+            <th>Location</th>
             <th>Read</th>
             <th>Vote</th>
           </tr>
@@ -33,18 +33,29 @@
     <tr>
       <td class="item-title">{{title}}</td>
       <td class="item-author">
-      {{#each taxonomy_authors}}
-      {{title}}
-      {{/each}}
+        {{#each taxonomy_authors}}
+        {{title}}
+        {{/each}}
       </td>
       <td class="item-issue">
-      {{#each taxonomy_published_issue}}
-      {{title}}
-      {{/each}}
+        {{#each taxonomy_published_issue}}
+        {{title}}
+        {{/each}}
       </td>
       <td class="item-pages">{{custom_fields.published_pages}}</td>
-      <td><a href="" class="button small secondary">Read</a></td>
-      <td><a href="" class="button small success">Vote</a></td>
+      <td>
+      {{#each taxonomy_published_issue}}
+      <a href="{{description}}" class="button tiny secondary"><strong>Read</strong></a>
+      {{/each}}
+      </td>
+      <td>
+        <a title="vote" class="button tiny success wpv_voting" href="javascript:void(0)">
+          <span class="wpv_votebtn_txt"><strong>Vote</strong></span>
+          <input type="hidden" class="postID" value="{{id}}">
+          <input type="hidden" class="userID" value="2">
+          <input type="hidden" class="authorID" value="2">
+        </a>
+      </td>
     </tr>
   {{/each}}
 </script>
