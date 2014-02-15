@@ -1,12 +1,5 @@
-<?php
-/*
-Template Name: Table Full
-*/
-
-?>
-<?php get_header(); ?>
-	<div class="row head-top">
-		<div class="column">
+  <div class="row head-top">
+    <div class="column">
 
       <table id="table">
         <thead>
@@ -18,7 +11,7 @@ Template Name: Table Full
       </table>
 
     </div>
-	</div>
+  </div>
 
 <script id="tbody-content" type="type/x-handlebars-template">
   <tr>
@@ -41,8 +34,3 @@ Template Name: Table Full
   var context   = jQuery.getJSON('curl_file.json', function( data ){});
   var html      = template(context);
 </script>
-
-
-
-
-<?php get_footer(); ?>

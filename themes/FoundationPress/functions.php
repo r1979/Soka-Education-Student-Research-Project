@@ -41,4 +41,16 @@ function display_download_link($post_id){
   return $download_link;
 }
 
+function query_site(){
+  $curl_url = 'http://sesrp.atriangle.com/api/get_posts/?post_type=paper';
+  $curl_output = 'curl_file.json' 'w';
+
+  curl_setopt($curl_url, CURLOPT_FILE, $curl_output);
+  curl_setopt($curl_url, CURLOPT_HEADER, 0);
+
+  curl_exec($curl_url);
+  curl_close($curl_url);
+  fclose($curl_output);
+}
+
 ?>
