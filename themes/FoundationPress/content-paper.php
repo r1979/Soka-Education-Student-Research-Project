@@ -24,9 +24,19 @@ pg. <?php echo $postmeta['published_pages'][0];  ?>
 </span>
 </p>
 
-<?php
-if(function_exists('wpv_voting_display_vote'))
- wpv_voting_display_vote(get_the_ID());
-?>
+<div class="row">
+  <div class="large-6 medium-6 column">
+    <?php
+    if(function_exists('wpv_voting_display_vote'))
+     wpv_voting_display_vote(get_the_ID());
+    ?>
+  </div>
+  <div class="large-6 medium-6 column">
+    <?php
+    if(function_exists('display_download_link'))
+      display_download_link(get_the_ID());
+    ?>
+  </div>
+</div>
 <hr />
 </li>

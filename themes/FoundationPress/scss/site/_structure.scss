@@ -14,7 +14,43 @@
 
  * ----------------------------------------------------------------------------
  */
+.row {
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0;
+margin-bottom: 0;
+max-width: 72.5rem!important;
+}
+.head-top{
+        padding-top:20%;
+        padding-bottom:20%;
+}
+.head-top h2{
+  margin-bottom: .5em;
+}
+.wpv_postvote {
+margin: 10px 0;
+font-weight: bold;
+font-size: 20px !important;
+padding: 5px 0px;
+}
+.wpv_votecount{
+padding: 10px 0px;
+display: inline-block;
+}
+.wpv_voted_icon{
+display: none;
+}
+.wpv_votebtn_txt{
+margin-left: 0em !important;
+width: 100%;
+margin-bottom: 0em !important;
+}
 
+li.paper p{
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
 /**
  * 1.0 Typography
  * ----------------------------------------------------------------------------
