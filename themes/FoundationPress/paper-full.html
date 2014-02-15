@@ -1,10 +1,25 @@
+<html>
+<head>
+
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/handlebars.js"></script>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
   <div class="row head-top">
     <div class="column">
 
       <table id="table">
         <thead>
           <tr>
-            <th>Papers</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published</th>
+            <th>Pages</th>
+            <th>Read</th>
+            <th>Vote</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -14,23 +29,40 @@
   </div>
 
 <script id="tbody-content" type="type/x-handlebars-template">
-  <tr>
-    {{#each posts}}
-      <td>{{title}}</td>
+  {{#each posts}}
+    <tr>
+      <td class="item-title">{{title}}</td>
+      <td class="item-author">
       {{#each taxonomy_authors}}
-      <td>{{title}}</td>
+      {{title}}
       {{/each}}
+      </td>
+      <td class="item-issue">
       {{#each taxonomy_published_issue}}
-      <td>Published: {{title}}</td>
+      {{title}}
       {{/each}}
-      <td>{{custom_fields.published_pages}}</td>
-    {{/each}}
-  </tr>
+      </td>
+      <td class="item-pages">{{custom_fields.published_pages}}</td>
+      <td><a href="" class="button small secondary">Read</a></td>
+      <td><a href="" class="button small success">Vote</a></td>
+    </tr>
+  {{/each}}
 </script>
 
 <script>
-  var source    = $('#tbody').html();
+  var source    = jQuery('#tbody-content').html();
   var template  = Handlebars.compile(source);
-  var context   = jQuery.getJSON('curl_file.json', function( data ){});
-  var html      = template(context);
+  var context   = jQuery.getJSON('curl_file.json', function( data ){
+    post_content();
+  });
+  function post_content(){
+    console.log(context.responseJSON);
+    var html      = template(context.responseJSON);
+    jQuery('#tbody').html(html);
+    jQuery('#table').dataTable();
+  }
+
 </script>
+
+</body>
+</html>
