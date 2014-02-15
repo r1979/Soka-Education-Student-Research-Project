@@ -15,6 +15,24 @@
  * ----------------------------------------------------------------------------
  */
 
+.dataTables_paginate,
+.dataTables_info{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#table_length, #table_filter{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  select, input{
+    display: inline;
+    width: auto;
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-bottom: 0em;
+  }
+}
+
 .button, button{
   margin-bottom: 0em !important;
 }
