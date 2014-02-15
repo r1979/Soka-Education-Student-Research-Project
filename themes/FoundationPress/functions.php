@@ -6,7 +6,7 @@ URL: http://olefredrik.com
 
 
 // Various clean up functions
-require_once('library/cleanup.php'); 
+require_once('library/cleanup.php');
 
 // Required for Foundation to work properly
 require_once('library/foundation.php');
@@ -33,5 +33,12 @@ add_theme_support( 'infinite-scroll', array(
     'container' => 'content',
     'footer' => 'page',
 ) );
+
+function display_download_link($post_id){
+  $issue = wp_get_post_terms( $post_id, 'published_issue');
+  $issue = $issue[0];
+  $download_link = '<a class="button secondary" href="' . bloginfo('url') . '/get_booklet/' . $issue . '">';
+  return $download_link;
+}
 
 ?>
