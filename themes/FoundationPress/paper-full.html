@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div class="row head-top">
+  <div class="row">
     <div class="column">
 
       <table id="table">
@@ -59,7 +59,14 @@
     console.log(context.responseJSON);
     var html      = template(context.responseJSON);
     jQuery('#tbody').html(html);
-    jQuery('#table').dataTable();
+    jQuery('#table').dataTable({
+      "sPaginationType": "full_numbers",
+      "bLengthChange": true,
+      "bFilter": true,
+      "bSort": true,
+      "bInfo": true,
+      "bAutoWidth": true,
+    });
   }
 
 </script>
