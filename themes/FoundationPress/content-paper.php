@@ -14,13 +14,11 @@
 	<header>
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 	</header>
-<p><strong>
-<?php print($authors[0]->name); ?>
-</strong>
-<br/>
+<p>
+<?php print($authors[0]->name); ?>,
 <span>
 <a href="<?php echo bloginfo('url');?>/published_issue/<?php print($issue[0]->name); ?>">Published <?php print($issue[0]->name); ?></a>,
-pg. <?php echo $postmeta['published_pages'][0];  ?>
+<?php echo $postmeta['published_pages'][0];  ?>
 </span>
 </p>
 
@@ -28,5 +26,4 @@ pg. <?php echo $postmeta['published_pages'][0];  ?>
 if(function_exists('wpv_voting_display_vote'))
  wpv_voting_display_vote(get_the_ID());
 ?>
-<hr />
 </li>

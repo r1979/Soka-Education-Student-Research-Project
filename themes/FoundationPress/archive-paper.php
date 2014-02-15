@@ -7,7 +7,7 @@
 <h1>Vote for published articles.</h1>
 <h2>Search by authors, titles, or conference year.</h2>
 <?php get_search_form(); ?>
-<h4>Note: All articles re-order upon page reload. <a href="javascript: window.location.reload()" class="button secondary tiny">Change order</a></h4>
+<h4>Note: All articles re-order upon page reload. <a href="javascript: window.location.reload()" class="right button secondary tiny">Change order</a></h4>
 </div>
 </div>
 	</div>

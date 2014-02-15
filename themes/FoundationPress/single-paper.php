@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="small-12 large-12 columns" role="main">
+	<div class="small-12 large-8 medium-9 large-centered medium-centered columns" role="main">
 
 
 
@@ -13,10 +13,12 @@
 
 			</header>
 			<div class="entry-content">
+				<p>
 				<?php the_field( "paper_abstract" ); ?>
 				<span class="authors">
 					<?php the_field( "author" ); ?>
 				</span>
+				</p>
 			</div>
 			<div>
 				<span class="pub_issue">

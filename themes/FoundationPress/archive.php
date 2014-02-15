@@ -1,15 +1,15 @@
 <?php get_header(); ?>
+<!-- Row for main content area -->
+	<div class="small-12 large-12 columns" role="main">
+
+
 <div class="row head-top">
 	<div class="column">
 		<div class="column">
-			<h1>Vote for published articles.</h1>
-			<h2>Search by authors, titles, or conference year.</h2>
-			<?php get_search_form(); ?>
+			<h1><?php wp_title('|', true, 'right');?></h1>
 		</div>
 	</div>
 </div>
-<!-- Row for main content area -->
-	<div class="small-12 large-12 columns" role="main">
 
 
 
@@ -38,5 +38,16 @@
 	<?php } ?>
 
 	</div>
+
+<div class="row head-top">
+	<div class="column">
+		<div class="column">
+			<h1>Vote for published articles.</h1>
+			<h2>Search by authors, titles, or conference year.</h2>
+			<?php get_search_form(); ?>
+		</div>
+	</div>
+</div>
+
 
 <?php get_footer(); ?>

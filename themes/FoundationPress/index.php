@@ -1,5 +1,13 @@
 <?php get_header(); ?>
 
+	<div class="row head-top">
+		<div class="column">
+<div class="column">
+<h1>Read about SESRP.</h1>
+</div>
+</div>
+	</div>
+
 	<div class="small-12 large-8 columns" role="main">
 	
 	<?php if ( have_posts() ) : ?>
