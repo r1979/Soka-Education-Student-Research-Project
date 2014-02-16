@@ -12,6 +12,7 @@ if (!function_exists('FoundationPress_scripts')) :
     wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'dataTables', get_template_directory_uri() . '/js/jquery.dataTables.min.js', array('jquery'), '1.0.0', false );
     wp_enqueue_script( 'handlebars', get_template_directory_uri() . '/js/handlebars.js', array('jquery'), '1.0.0', false );
+    wp_enqueue_script( 'underscore', get_template_directory_uri() . '/js/underscore.js', array('jquery'), '1.0.0', false );
 
   }
 
