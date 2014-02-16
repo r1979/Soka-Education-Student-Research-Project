@@ -1,4 +1,3 @@
-
 <script id="tbody-content" type="type/x-handlebars-template">
   {{#each posts}}
     <tr>
@@ -47,7 +46,7 @@
   }
   var source    = jQuery('#tbody-content').html();
   var template  = Handlebars.compile(source);
-  var context   = jQuery.getJSON('http://sesrp.atriangle.com/wp-content/themes/FoundationPress/curl_file.json', function( data ){
+  var context   = jQuery.getJSON('http://whowroteforsesrp.com/wp-content/themes/FoundationPress/curl_file.json', function( data ){
     post_content();
   });
 
