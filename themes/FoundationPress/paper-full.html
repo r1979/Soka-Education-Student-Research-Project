@@ -45,7 +45,7 @@
         {{title}}
         {{/each}}
       </td>
-      <td class="item-pages">{{custom_fields.published_pages}}</td>
+      <td class="item-pages">{{custom_fields.pages}}</td>
       <td>
       {{#each taxonomy_published_issue}}
       <a href="{{description}}" class="button tiny secondary"><strong>Read</strong></a>
@@ -84,13 +84,21 @@
       });
     });
   }
+  function count_unique(authors){
+    unique_authors = _.uniq(authors);
+    jQuery.each(unique_authors, function(i,item){
+      _.countBy( authors, function(item){
+        console.log(item);
+      });
+    });
+  }
   var source    = jQuery('#tbody-content').html();
   var template  = Handlebars.compile(source);
   var authors = [];
+  var unique_authors = [];
   var context   = jQuery.getJSON('curl_file.json', function( data ){
     author_into_array(data);
     post_content();
-
   });
 
 </script>
