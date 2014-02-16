@@ -12,7 +12,7 @@
         {{title}}
         {{/each}}
       </td>
-      <td class="item-pages">{{custom_fields.published_pages}}</td>
+      <td class="item-pages">{{custom_fields.pages}}</td>
       <td>
       {{#each taxonomy_published_issue}}
       <a href="{{description}}" class="button tiny secondary"><strong>Read</strong></a>
