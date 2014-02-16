@@ -34,7 +34,7 @@
 <script>
   var source    = jQuery('#tbody-content').html();
   var template  = Handlebars.compile(source);
-  var context   = jQuery.getJSON('curl_file.json', function( data ){
+  var context   = jQuery.getJSON('<?php echo get_template_directory(); ?>/curl_file.json', function( data ){
     post_content();
   });
   function post_content(){
