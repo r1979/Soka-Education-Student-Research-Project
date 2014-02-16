@@ -35,6 +35,9 @@
 
 .button, button{
   margin-bottom: 0em !important;
+  &.success{
+    color: white !important;
+  }
 }
 
 /*
