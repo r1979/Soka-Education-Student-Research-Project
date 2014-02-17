@@ -19,12 +19,7 @@
       {{/each}}
       </td>
       <td>
-        <a title="vote" target="_blank" class="button tiny success wpv_voting" href="javascript:void(0)">
-          <span class="wpv_votebtn_txt"><strong>Vote</strong></span>
-          <input type="hidden" class="postID" value="{{id}}">
-          <input type="hidden" class="userID" value="2">
-          <input type="hidden" class="authorID" value="2">
-        </a>
+        wpv_voting_display_vote({{id}});
       </td>
     </tr>
   {{/each}}
